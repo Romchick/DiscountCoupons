@@ -1,0 +1,10 @@
+﻿<Window x:Class="DiscountCoupons.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Authorization" Height="194.776" Width="486.194">
+    <Grid>
+        <Button Content="User" HorizontalAlignment="Left" Height="62" Margin="26,52,0,0" VerticalAlignment="Top" Width="182" Click="Button_User_Click"/>
+        <Button Content="Admin" HorizontalAlignment="Left" Height="62" Margin="259,52,0,0" VerticalAlignment="Top" Width="182" Click="Button_Admin_Click"/>
+
+    </Grid>
+</Window>

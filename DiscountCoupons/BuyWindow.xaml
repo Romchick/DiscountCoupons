@@ -1,0 +1,18 @@
+﻿<Window x:Class="DiscountCoupons.BuyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="BuyWindow" Height="511.165" Width="729.611">
+    <Grid>
+        <ComboBox Name="productsCombo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="295" Margin="53,104,0,0" Height="44"/>
+        <TextBox Name="amountToBuy" HorizontalAlignment="Left" Height="44" Margin="461,104,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="49" TextChanged="TextBox_TextChanged"/>
+        <Label Content="Select product" HorizontalAlignment="Left" Height="31" Margin="155,65,0,0" VerticalAlignment="Top" Width="93"/>
+        <Label Content="Enter amount" HorizontalAlignment="Left" Height="29" Margin="446,67,0,0" VerticalAlignment="Top" Width="81"/>
+        <TextBlock x:Name="productInfo" HorizontalAlignment="Left" Height="63" Margin="53,195,0,0" TextWrapping="Wrap" Text="Total price 0" VerticalAlignment="Top" Width="309"/>
+        <TextBlock Name="productsInTheCart"  HorizontalAlignment="Left" Height="60" Margin="431,195,0,0" TextWrapping="Wrap" Text="Products in the cart: 0" VerticalAlignment="Top" Width="228"/>
+        <TextBox HorizontalAlignment="Left" Height="45" Margin="53,391,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="326"/>
+        <Button Content="Get Discount" HorizontalAlignment="Left" Height="45" Margin="461,391,0,0" VerticalAlignment="Top" Width="198"/>
+        <Button x:Name="addToCart" Content="Add to cart" HorizontalAlignment="Left" Height="50" Margin="53,288,0,0" VerticalAlignment="Top" Width="295" Click="Button_AddToCart_Click"/>
+        <Button Content="Pay" HorizontalAlignment="Left" Height="50" Margin="461,288,0,0" VerticalAlignment="Top" Width="198"/>
+
+    </Grid>
+</Window>
