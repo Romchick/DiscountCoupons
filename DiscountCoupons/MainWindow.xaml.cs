@@ -23,8 +23,14 @@ namespace DiscountCoupons
         public MainWindow()
         {
             InitializeComponent();
-            WorkWithDatabase work = new WorkWithDatabase();
-            work.createNewDatabase();
+            try
+            {   WorkWithDatabase work = new WorkWithDatabase();
+                work.createNewDatabase();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Cann`t create Database");
+            }
         }
 
         private void Button_User_Click(object sender, RoutedEventArgs e)

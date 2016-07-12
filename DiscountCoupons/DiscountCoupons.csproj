@@ -72,6 +72,7 @@
     </ApplicationDefinition>
     <Compile Include="Coupon.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="WorkWithCoupons.cs" />
     <Compile Include="WorkWithDatabase.cs" />
     <Page Include="AdminWindow.xaml">
       <SubType>Designer</SubType>

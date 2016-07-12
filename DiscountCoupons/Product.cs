@@ -11,11 +11,13 @@ namespace DiscountCoupons
         public string Name { get; set; }
 
         public double Price { get; set; }
+        public bool HasDiscount { get; set; }
 
-        public Product(string Name, double Price)
+        public Product(string Name, double Price, bool HasDiscount)
         {
             this.Name = Name;
             this.Price = Price;
+            this.HasDiscount = HasDiscount;
         }
     }
 }

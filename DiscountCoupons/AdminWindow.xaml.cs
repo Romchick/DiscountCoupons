@@ -33,7 +33,7 @@ namespace DiscountCoupons
             }
             else
             {
-                Product product = new Product(nameOfProduct.Text, Convert.ToDouble(priceOfProduct.Text));
+                Product product = new Product(nameOfProduct.Text, Convert.ToDouble(priceOfProduct.Text), false);
                 WorkWithDatabase work = new WorkWithDatabase();
                 work.addProduct(product);
                 nameOfProduct.Text = "";
@@ -74,7 +74,6 @@ namespace DiscountCoupons
             }
         }
 
-       
         private void priceOfProduct_TextChanged(object sender, TextChangedEventArgs e)
         {
             double res;
@@ -119,11 +118,18 @@ namespace DiscountCoupons
         {
              double res;
              bool isInt = double.TryParse(priceSet.Text, out res);
-             if (isInt != true && !priceSet.Text.Equals("") || res < 0 || res > 100)
+             if (isInt != true && !priceSet.Text.Equals("") || res < 0)
             {
                 MessageBox.Show("Only positive numbers requried!");
                 priceSet.Text = "";
             }
+        }
+
+        private void backButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
 
     }

@@ -92,9 +92,53 @@ namespace DiscountCoupons
             string selectProductsQuery = "SELECT * FROM PRODUCTS";
             connection.Open();
             SQLiteCommand selectAllProducts = new SQLiteCommand(selectProductsQuery, connection);
-            var allProductsReader = selectAllProducts.ExecuteReader();
+            SQLiteDataReader allProductsReader = selectAllProducts.ExecuteReader();
             return allProductsReader;
         }
 
+        public SQLiteDataReader selectCoupon(int couponNumber)
+        {
+            var connection = new SQLiteConnection(connString);
+            string selectCouponQuery = String.Format(@"SELECT * FROM COUPONS 
+                                                        WHERE COUPON_NUMBER = '{0}' ", couponNumber);
+            connection.Open();
+            SQLiteCommand selectOneCoupon = new SQLiteCommand(selectCouponQuery, connection);
+            SQLiteDataReader selectedCouponReader = selectOneCoupon.ExecuteReader();
+
+            return selectedCouponReader;
+          
+        }
+
+        public void deleteCoupon(int couponNumber)
+        {
+            var connection = new SQLiteConnection(connString);
+            string deleteCouponQuery = String.Format(@"DELETE FROM COUPONS 
+                                                        WHERE COUPON_NUMBER = {0};", couponNumber);
+            connection.Open();
+            SQLiteCommand deleteOneCoupon = new SQLiteCommand(deleteCouponQuery, connection);
+            deleteOneCoupon.ExecuteNonQuery();
+
+        }
+
+        public SQLiteDataReader selectLowerPrice()
+        {
+            var connection = new SQLiteConnection(connString);
+            string selectLowerPriceQuery = "SELECT * FROM LOWER_PRICE";
+            connection.Open();
+            SQLiteCommand selectPrice = new SQLiteCommand(selectLowerPriceQuery, connection);
+            SQLiteDataReader selectedLowerPrice = selectPrice.ExecuteReader();
+            return selectedLowerPrice;
+        }
+
+        public SQLiteDataReader selectOneProduct(string selectedProduct)
+        {
+            var connection = new SQLiteConnection(connString);
+            string selectOneProductQuery = String.Format(@"SELECT * FROM PRODUCTS 
+                                                        WHERE PRODUCT_NAME = '{0}'", selectedProduct);
+            connection.Open();
+            SQLiteCommand selectOneProductCommand = new SQLiteCommand(selectOneProductQuery, connection);
+            SQLiteDataReader selectOneProductReader = selectOneProductCommand.ExecuteReader();
+            return selectOneProductReader;
+        }
     }
 }
